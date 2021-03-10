@@ -85,7 +85,7 @@ namespace InLectureDemo
 
         public override string ToString() // special methods that tells us about the object
         {
-            return String.Format("I am a rectangle with length {0} and width {1}",length, width);
+            return String.Format("Length: {0} /n Width: {1}",length, width);
         }
     }
 }
