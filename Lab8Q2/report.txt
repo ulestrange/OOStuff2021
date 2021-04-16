@@ -1,0 +1,5 @@
+Temperature Report 
+
+Date            Temperature    
+
+ Average is NaN
