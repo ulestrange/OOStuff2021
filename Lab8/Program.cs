@@ -10,7 +10,35 @@ namespace Lab8
             //CreateTempReport();
             //WriteSongLine();
 
-            Console.WriteLine(ReadSongLine());
+            // Console.WriteLine(Read3rdSongLine());
+
+            WriteSongToConsole();
+        }
+
+        static void WriteSongToConsole() 
+        {
+
+            string lineIn;
+
+            string filename = "../../../song2.txt";
+
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+
+            StreamReader sr = new StreamReader(fs);
+
+            lineIn = sr.ReadLine();
+
+
+
+            while (lineIn != null)
+            {
+               
+
+                Console.WriteLine(lineIn);
+                lineIn = sr.ReadLine();
+            }
+
+
         }
 
         static void WriteSongLine ()
@@ -40,6 +68,23 @@ namespace Lab8
 
             StreamReader sr = new StreamReader(fs);
 
+            lineIn = sr.ReadLine();
+
+            return lineIn;
+        }
+
+        static string Read3rdSongLine()
+        {
+            string lineIn;
+
+            string filename = "../../../song2.txt";
+
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+
+            StreamReader sr = new StreamReader(fs);
+
+           sr.ReadLine();
+             sr.ReadLine();
             lineIn = sr.ReadLine();
 
             return lineIn;
