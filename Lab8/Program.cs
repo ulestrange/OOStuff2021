@@ -7,24 +7,42 @@ namespace Lab8
     {
         static void Main(string[] args)
         {
-            CreateTempReport();
+            //CreateTempReport();
+            //WriteSongLine();
+
+            Console.WriteLine(ReadSongLine());
         }
 
         static void WriteSongLine ()
         {
 
             string filename1 = "../../../song2.txt";
-            string filename2 = "song2.txt";
+            string filename2 = "songuna.txt";
             string filename3 = @"C:\Users\lestr\Desktop\song4.csv";
             string filename4 = "C:\\Users\\lestr\\Desktop\\song5.txt";
 
-            FileStream fs = new FileStream(filename4, FileMode.Create, FileAccess.Write);
+            FileStream fs = new FileStream(filename1, FileMode.Create , FileAccess.Write);
 
             StreamWriter sw = new StreamWriter(fs);
 
-            sw.WriteLine("Hello is it me you're lookin for");
+            sw.WriteLine("Sinne Fianna Fáil,\natá faoi gheall ag Éirinn,\nBuíon dár slua\nthar toinn do ráinig chughainn,\nFaoi mhóid bheith saor/nSeantír ár sinsear feasta,");
 
             sw.Close();
+        }
+
+        static string ReadSongLine()
+        {
+            string lineIn;
+
+            string filename = "../../../song2.txt";
+
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+
+            StreamReader sr = new StreamReader(fs);
+
+            lineIn = sr.ReadLine();
+
+            return lineIn;
         }
 
         static void CreateTempReport ()
